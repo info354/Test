@@ -1,1 +1,22 @@
+<!-- MẪU LỰA CHỌN THANH TOÁN TỐI GIẢN CHUẨN QUỐC TẾ -->
+<div class="methods-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+    <!-- Dành cho khách tại Úc hoặc chuyển qua Wise -->
+    <div class="method-item" style="background: #fbfbfd; border: 1px solid #e5e5ea; border-radius: 8px; padding: 8px 10px;">
+        <div style="font-size: 10px; font-weight: 700; color: #1c1c1e;">
+            AU Domestic / Wise Transfer <span style="background: #e0f2fe; color: #0284c7; font-size: 8px; padding: 1px 4px; border-radius: 3px;">FAST & FREE</span>
+        </div>
+        <div style="font-size: 8.5px; color: #636366; margin-top: 3px;">
+            Supports Osko, NPP & Wise AUD local transfers (0-1 day).
+        </div>
+    </div>
 
+    <!-- Dành cho khách quốc tế chuyển tiền điện chuyển SWIFT -->
+    <div class="method-item" style="background: #fbfbfd; border: 1px solid #e5e5ea; border-radius: 8px; padding: 8px 10px;">
+        <div style="font-size: 10px; font-weight: 700; color: #1c1c1e;">
+            International Wire (SWIFT) <span style="background: #f3e8ff; color: #6b21a8; font-size: 8px; padding: 1px 4px; border-radius: 3px;">GLOBAL</span>
+        </div>
+        <div style="font-size: 8.5px; color: #636366; margin-top: 3px;">
+            For international transfers originating outside Australia.
+        </div>
+    </div>
+</div>
