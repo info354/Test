@@ -1,9 +1,5 @@
 # 📂 KHO LƯU TRỮ MÃ NGUỒN CÁ NHÂN
 
-Chào mừng bạn đến với kho lưu trữ bài tập HTML/CSS và công cụ Google Apps Script (GAS).
-
----
-
 ## 🌐 1. Danh sách Bài tập HTML / CSS
 
 | Tên bài tập | Link xem Preview | Code gốc | Ghi chú |
