@@ -1,11 +1,16 @@
 # 📂 KHO LƯU TRỮ MÃ NGUỒN CÁ NHÂN
 
-## 🌐 1. Danh sách Bài tập HTML / CSS
+Chào mừng bạn đến với kho lưu trữ bài tập HTML/CSS và công cụ Google Apps Script (GAS).
+
+---
+
+## 🌐 1. Danh sách Mẫu Thông tin Ngân hàng & HTML/CSS
 
 | Tên bài tập | Link xem Preview | Code gốc | Ghi chú |
 | :--- | :--- | :--- | :--- |
-| **Trang Bank AU** | [Xem kết quả Live](https://info354.github.io/Test/AU.html) | [Mở file AU.html](./AU.html) | Mẫu bảng thanh toán Úc |
-| **Trang chủ Test** | [Xem kết quả Live](https://info354.github.io/Test/) | [Mở file index.html](./index.html) | Bài tập bài trí cơ bản |
+| **Trang Bank AU** | [Xem kết quả Live](https://info354.github.io/bank/au.html) | [Mở file au.html](./au.html) | Mẫu bảng thanh toán Úc (AU) |
+| **Trang Bank US** | [Xem kết quả Live](https://info354.github.io/bank/us.html) | [Mở file us.html](./us.html) | Mẫu bảng thanh toán Mỹ (US) |
+| **Trang chủ Index** | [Xem kết quả Live](https://info354.github.io/bank/) | [Mở file index.html](./index.html) | Trang chủ tổng hợp |
 
 ---
 
