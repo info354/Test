@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Danh Mục Mẫu Thông Tin Ngân Hàng</title>
+  <title>Hệ Thống Mẫu Tài Khoản Ngân Hàng</title>
   <style>
     * {
       box-sizing: border-box;
@@ -12,102 +12,72 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     body {
-      background-color: #f4f6f8;
-      color: #1a1a1a;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
+      height: 100vh;
+      background-color: #f4f6f8;
+      overflow: hidden;
     }
-    .container {
+    /* Thanh Menu bên trái */
+    .sidebar {
+      width: 280px;
       background: #ffffff;
-      max-width: 500px;
-      width: 100%;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      border: 1px solid #e1e4e8;
-    }
-    h1 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #0969da;
-      text-align: center;
-    }
-    p.subtitle {
-      font-size: 13px;
-      color: #57606a;
-      margin-bottom: 24px;
-      text-align: center;
-    }
-    .menu-list {
+      border-right: 1px solid #e1e4e8;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 15px;
+      flex-shrink: 0;
+    }
+    .sidebar h2 {
+      font-size: 16px;
+      color: #0969da;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #0969da;
     }
     .menu-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 18px;
-      background-color: #f8f9fa;
+      display: block;
+      padding: 12px 15px;
+      background: #f8f9fa;
       border: 1px solid #e1e4e8;
-      border-radius: 8px;
+      border-radius: 6px;
       text-decoration: none;
       color: #24292f;
+      font-size: 13px;
       font-weight: 600;
-      font-size: 14px;
       transition: all 0.2s ease;
     }
     .menu-item:hover {
-      background-color: #ddf4ff;
+      background: #ddf4ff;
       border-color: #54aeff;
       color: #0969da;
-      transform: translateY(-1px);
     }
-    .badge {
-      font-size: 11px;
-      padding: 2px 8px;
-      border-radius: 12px;
-      background-color: #e1e4e8;
-      color: #57606a;
-      font-weight: 500;
+    /* Khung chiếu trang con bên phải */
+    .content-area {
+      flex-grow: 1;
+      height: 100vh;
+      background: #ffffff;
     }
-    .menu-item:hover .badge {
-      background-color: #0969da;
-      color: #ffffff;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>🏦 Danh Mục Thanh Toán</h1>
-    <p class="subtitle">Chọn mẫu thông tin tài khoản ngân hàng để xem giao diện</p>
+  <!-- Thanh Menu cố định bên trái -->
+  <div class="sidebar">
+    <h2>🏦 Danh Mục Ngân Hàng</h2>
+    
+    <!-- Lưu ý thuộc tính target="view-frame" giúp đẩy nội dung vào iframe -->
+    <a href="./au.html" target="view-frame" class="menu-item">🇦🇺 Tài khoản Úc (AU)</a>
+    <a href="./us.html" target="view-frame" class="menu-item">🇺🇸 Tài khoản Mỹ (US)</a>
+  </div>
 
-    <div class="menu-list">
-      <!-- Đường dẫn tới trang Úc -->
-      <a href="./au.html" class="menu-item">
-        <span>🇦🇺 Tài khoản Ngân hàng Úc (AU)</span>
-        <span class="badge">Xem ngay ➔</span>
-      </a>
-
-      <!-- Đường dẫn tới trang Mỹ -->
-      <a href="./us.html" class="menu-item">
-        <span>🇺🇸 Tài khoản Ngân hàng Mỹ (US)</span>
-        <span class="badge">Xem ngay ➔</span>
-      </a>
-
-      <!-- Bạn có thể copy thêm dòng này nếu sau này có trang mới (Ví dụ: vn.html) -->
-      <!-- 
-      <a href="./vn.html" class="menu-item">
-        <span>🇻🇳 Tài khoản Việt Nam (VN)</span>
-        <span class="badge">Xem ngay ➔</span>
-      </a> 
-      -->
-    </div>
+  <!-- Khung hiển thị nội dung các trang con bên phải -->
+  <div class="content-area">
+    <iframe name="view-frame" src="./au.html"></iframe>
   </div>
 
 </body>
