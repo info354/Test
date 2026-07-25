@@ -17,7 +17,7 @@
       background-color: #f4f6f8;
       overflow: hidden;
     }
-    /* Thanh Menu bên trái */
+    /* Thanh Menu cố định bên trái */
     .sidebar {
       width: 280px;
       background: #ffffff;
@@ -25,7 +25,7 @@
       padding: 20px;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 12px;
       flex-shrink: 0;
     }
     .sidebar h2 {
@@ -33,6 +33,7 @@
       color: #0969da;
       padding-bottom: 10px;
       border-bottom: 2px solid #0969da;
+      margin-bottom: 5px;
     }
     .menu-item {
       display: block;
@@ -51,7 +52,7 @@
       border-color: #54aeff;
       color: #0969da;
     }
-    /* Khung chiếu trang con bên phải */
+    /* Khung chiếu nội dung file con bên phải */
     .content-area {
       flex-grow: 1;
       height: 100vh;
@@ -66,16 +67,16 @@
 </head>
 <body>
 
-  <!-- Thanh Menu cố định bên trái -->
+  <!-- Thanh Menu bên trái -->
   <div class="sidebar">
     <h2>🏦 Danh Mục Ngân Hàng</h2>
     
-    <!-- Lưu ý thuộc tính target="view-frame" giúp đẩy nội dung vào iframe -->
     <a href="./au.html" target="view-frame" class="menu-item">🇦🇺 Tài khoản Úc (AU)</a>
     <a href="./us.html" target="view-frame" class="menu-item">🇺🇸 Tài khoản Mỹ (US)</a>
+    <a href="./ca.html" target="view-frame" class="menu-item">🇨🇦 Tài khoản Canada (CA)</a>
   </div>
 
-  <!-- Khung hiển thị nội dung các trang con bên phải -->
+  <!-- Khung hiển thị nội dung các trang con -->
   <div class="content-area">
     <iframe name="view-frame" src="./au.html"></iframe>
   </div>
