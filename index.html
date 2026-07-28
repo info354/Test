@@ -27,25 +27,25 @@
     }
 
     .menu-title {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: bold;
       color: #0056b3;
       text-transform: uppercase;
-      margin-bottom: 12px;
-      margin-top: 15px;
-      padding-bottom: 5px;
+      margin-bottom: 10px;
+      margin-top: 18px;
+      padding-bottom: 4px;
       border-bottom: 2px solid #0056b3;
     }
     .menu-title:first-child {
       margin-top: 0;
     }
 
-    /* Các nút bấm */
+    /* Các nút bấm menu */
     .menu-item {
       display: block;
       width: 100%;
-      padding: 10px 12px;
-      margin-bottom: 8px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
       background-color: #f8f9fa;
       color: #333;
       text-decoration: none;
@@ -62,10 +62,53 @@
       color: #0056b3;
     }
 
-    /* Khung nội dung iframe */
-    .content {
+    /* Khung nội dung hiển thị bên phải */
+    .content-container {
       flex: 1;
+      display: flex;
+      flex-direction: column;
       height: 100%;
+    }
+
+    /* Thanh công cụ phía trên Iframe */
+    .top-bar {
+      height: 45px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .top-bar span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .btn-open-separate {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 12px;
+      background-color: #28a745;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+
+    .btn-open-separate:hover {
+      background-color: #218838;
+    }
+
+    /* Frame chứa nội dung */
+    .iframe-wrapper {
+      flex: 1;
+      width: 100%;
+      height: calc(100% - 45px);
     }
 
     iframe {
@@ -82,23 +125,43 @@
     
     <!-- Nhóm Wallet -->
     <div class="menu-title">🏛️ Tài Khoản Wallet</div>
-    <a href="wallet/au.html" target="contentFrame" class="menu-item"><b>AU</b> Tài khoản Úc (AU)</a>
-    <a href="wallet/us.html" target="contentFrame" class="menu-item"><b>US</b> Tài khoản Mỹ (US)</a>
-    <a href="wallet/ca.html" target="contentFrame" class="menu-item"><b>CA</b> Tài khoản Canada (CA)</a>
+    <a href="wallet/au.html" onclick="updateDirectLink('wallet/au.html')" target="contentFrame" class="menu-item"><b>AU</b> Tài khoản Úc (AU)</a>
+    <a href="wallet/us.html" onclick="updateDirectLink('wallet/us.html')" target="contentFrame" class="menu-item"><b>US</b> Tài khoản Mỹ (US)</a>
+    <a href="wallet/ca.html" onclick="updateDirectLink('wallet/ca.html')" target="contentFrame" class="menu-item"><b>CA</b> Tài khoản Canada (CA)</a>
 
     <!-- Nhóm Wire Transfer -->
     <div class="menu-title">🌐 Chuyển Khoản Wire</div>
-    <a href="wire/all" target="contentFrame" class="menu-item">Tất cả tài khoản Wire</a>
-    <a href="wire/aud" target="contentFrame" class="menu-item">Wire - AUD</a>
-    <a href="wire/usd" target="contentFrame" class="menu-item">Wire - USD</a>
-    <a href="wire/vnd" target="contentFrame" class="menu-item">Wire - VND</a>
+    <a href="wire/all.html" onclick="updateDirectLink('wire/all.html')" target="contentFrame" class="menu-item">Tất cả tài khoản Wire</a>
+    <a href="wire/aud.html" onclick="updateDirectLink('wire/aud.html')" target="contentFrame" class="menu-item">Wire - AUD</a>
+    <a href="wire/usd.html" onclick="updateDirectLink('wire/usd.html')" target="contentFrame" class="menu-item">Wire - USD</a>
+    <a href="wire/vnd.html" onclick="updateDirectLink('wire/vnd.html')" target="contentFrame" class="menu-item">Wire - VND</a>
 
   </div>
 
-  <!-- IFRAME HIỂN THỊ NỘI DUNG -->
-  <div class="content">
-    <iframe name="contentFrame" src="wallet/au.html"></iframe>
+  <!-- CONTAINER BÊN PHẢI -->
+  <div class="content-container">
+    
+    <!-- Thanh công cụ có nút mở trang riêng để in PDF -->
+    <div class="top-bar">
+      <span>👁️ Xem trước nội dung</span>
+      <a id="directLink" href="wallet/au.html" target="_blank" class="btn-open-separate">
+        ↗️ Mở trang lẻ (để In / Tải PDF)
+      </a>
+    </div>
+
+    <!-- IFRAME -->
+    <div class="iframe-wrapper">
+      <iframe id="mainIframe" name="contentFrame" src="wallet/au.html"></iframe>
+    </div>
+
   </div>
+
+  <!-- SCRIPT CẬP NHẬT LINK TRANG LẺ KHI BẤM MENU -->
+  <script>
+    function updateDirectLink(url) {
+      document.getElementById('directLink').href = url;
+    }
+  </script>
 
 </body>
 </html>
