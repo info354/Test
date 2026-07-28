@@ -1,1 +1,404 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Guide VND - VIET NAM PHOTO EDITING SERVICES JOINT STOCK COMPANY</title>
+    <style>
+        /* ==========================================================================
+           1. RESET & BASE STYLES (APPLE / IOS WIDGET PALETTE)
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
+        :root {
+            /* Apple Widget Palette */
+            --bg-page: #F5F5F7;
+            --bg-card: #FFFFFF;
+            --text-main: #1D1D1F;
+            --text-sub: #86868B;
+            --border-card: rgba(0, 0, 0, 0.08);
+            
+            /* Accent Colors */
+            --accent-orange: #FF6B00;
+            --bg-note: #FFFBEB;
+            --border-note: #FDE68A;
+            
+            /* Strict Typography Hierarchy */
+            --font-value: 8.5pt;     /* Giá trị dữ liệu chính & Tiêu đề footer */
+            --font-label: 7.2pt;     /* Nhãn phụ, mô tả, Slogan, Footer */
+            --font-mono: 9.5pt;      /* Monospace dãy số (STK, SWIFT) */
+            --font-head-title: 13pt; /* Tiêu đề chính H1 */
+            --font-head-sub: 8.5pt;  /* Header Company Name */
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 8mm;
+            background-color: var(--bg-page);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.35;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Monospace Class */
+        .font-mono {
+            font-family: "SF Mono", "Roboto Mono", "Courier New", Courier, monospace;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==========================================================================
+           2. LAYOUT CONTAINER (FULL-WIDTH & ZERO-SCROLL)
+           ========================================================================== */
+        .page-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 12px;
+        }
+
+        /* Card Component */
+        .card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-card);
+            padding: 16px 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        /* ==========================================================================
+           3. HEADER SECTION
+           ========================================================================== */
+        .header-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+        }
+
+        .brand-info h2 {
+            font-size: var(--font-head-sub);
+            font-weight: 700;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        .brand-info p {
+            font-size: var(--font-label);
+            font-weight: 500;
+            color: var(--text-sub);
+            margin-top: 1px;
+        }
+
+        .doc-title-block {
+            text-align: right;
+        }
+
+        .doc-title {
+            font-size: var(--font-head-title);
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.2px;
+        }
+
+        .doc-badge {
+            display: inline-block;
+            margin-top: 3px;
+            padding: 2px 8px;
+            border-radius: 6px;
+            border: 1px solid var(--accent-orange);
+            color: var(--accent-orange);
+            font-size: var(--font-label);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* ==========================================================================
+           4. MAIN CONTENT - MERGED SINGLE CARD (ZERO DUPLICATION)
+           ========================================================================== */
+        .section-title {
+            font-size: var(--font-value);
+            font-weight: 700;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+            display: inline-block;
+            border-bottom: 1.5px solid var(--accent-orange);
+            padding-bottom: 2px;
+        }
+
+        /* Highlight Box: VND Account Number & SWIFT Code */
+        .primary-acc-box {
+            background-color: var(--bg-page);
+            border-radius: 10px;
+            padding: 12px 16px;
+            border: 1px solid var(--border-card);
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .acc-number {
+            font-size: 14pt;
+            color: var(--accent-orange);
+            font-weight: 700;
+        }
+
+        /* Grid 2 Columns for Banking Details */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+        }
+
+        .data-row {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .data-label {
+            font-size: var(--font-label);
+            font-weight: 500;
+            color: var(--text-sub);
+            text-transform: uppercase;
+        }
+
+        .data-value {
+            font-size: var(--font-value);
+            font-weight: 600;
+            color: var(--text-main);
+            word-break: break-word;
+        }
+
+        /* ==========================================================================
+           5. SEPARATE NOTE BOX: REMINDER (BÔI VÀNG NHẠT - KHÔNG HEADER)
+           ========================================================================== */
+        .note-card {
+            background-color: var(--bg-note);
+            border: 1px solid var(--border-note);
+            border-radius: 10px;
+            padding: 10px 16px;
+        }
+
+        .note-text {
+            font-size: var(--font-label);
+            font-weight: 500;
+            color: #78350F;
+            line-height: 1.35;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .note-text::before {
+            content: "•";
+            color: var(--accent-orange);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .note-text strong {
+            color: #451A03;
+            font-weight: 700;
+        }
+
+        /* ==========================================================================
+           6. FOOTER SECTION
+           ========================================================================== */
+        .footer-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 12px 20px;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .cap-title {
+            font-size: var(--font-value);
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .cap-desc {
+            font-size: var(--font-label);
+            font-weight: 500;
+            color: var(--text-sub);
+        }
+
+        .cap-desc a {
+            color: var(--text-sub);
+            text-decoration: none;
+        }
+
+        /* ==========================================================================
+           7. PRINT OPTIMIZATION (CLEAN PRINT & PRIVACY CLEANUP)
+           ========================================================================== */
+        @media print {
+            html, body {
+                background: var(--bg-page) !important;
+                height: auto !important;
+                padding: 0 !important;
+            }
+
+            .page-container {
+                height: auto !important;
+                page-break-inside: avoid;
+            }
+
+            .card {
+                box-shadow: none !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .note-card {
+                background-color: var(--bg-note) !important;
+                border-color: var(--border-note) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .primary-acc-box {
+                background-color: var(--bg-page) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            iframe, .privacy, .terms, #privacy-terms {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        
+        <!-- HEADER SECTION -->
+        <header class="card header-card">
+            <div class="brand-block">
+                <img src="http://ps-vn.com/wp-content/uploads/2026/07/logo-for-web-1.svg" alt="PSVN Logo" class="brand-logo">
+                <div class="brand-info">
+                    <h2>VIET NAM PHOTO EDITING SERVICES JOINT STOCK COMPANY</h2>
+                    <p>Professional Post-Production & Image Editing Services</p>
+                </div>
+            </div>
+            <div class="doc-title-block">
+                <h1 class="doc-title">PAYMENT GUIDE</h1>
+                <span class="doc-badge">VND CURRENCY ONLY</span>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT (1 TÀI KHOẢN VND) -->
+        <main class="card">
+            <h3 class="section-title">BANK TRANSFER DETAILS</h3>
+            
+            <!-- Highlight Box: VND Account Number & SWIFT Code -->
+            <div class="primary-acc-box">
+                <div>
+                    <div class="data-label">VND ACCOUNT NUMBER</div>
+                    <div class="acc-number font-mono">818988</div>
+                </div>
+                <div style="text-align: right;">
+                    <div class="data-label">SWIFT / BIC CODE</div>
+                    <div class="font-mono" style="font-size: 11pt; color: var(--accent-orange); font-weight: 700;">ASCBVNVX</div>
+                </div>
+            </div>
+
+            <!-- Banking Details Grid -->
+            <div class="grid-2col">
+                <div class="data-row">
+                    <span class="data-label">FULL NAME OF ACCOUNT HOLDER</span>
+                    <span class="data-value">CTY CP DV CHINH SUA HINH ANH VN</span>
+                </div>
+
+                <div class="data-row">
+                    <span class="data-label">BENEFICIARY BANK NAME</span>
+                    <span class="data-value">Asia Commercial Bank (ACB)</span>
+                </div>
+
+                <div class="data-row">
+                    <span class="data-label">BANK BRANCH & ADDRESS</span>
+                    <span class="data-value">Ngan Hang ACB Hanoi - PGD Linh Dam</span>
+                </div>
+
+                <div class="data-row">
+                    <span class="data-label">COUNTRY / POSTAL CODE</span>
+                    <span class="data-value">Vietnam / 100000</span>
+                </div>
+
+                <div class="data-row" style="grid-column: span 2;">
+                    <span class="data-label">REGISTER ADDRESS</span>
+                    <span class="data-value">61, Ngach 55/24, Ngo 55, Hoang Hoa Tham, Ngoc Ha, Ba Dinh, Hanoi, Vietnam</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- DIV NOTE VÀNG NHẠT (REMINDER CALLOUT BOX) -->
+        <div class="note-card">
+            <p class="note-text">Please include your <strong>Invoice Number</strong> or <strong>Project Name</strong> in the payment reference details.</p>
+        </div>
+
+        <!-- FOOTER CARD -->
+        <footer class="card footer-card">
+            <div class="footer-col">
+                <span class="cap-title">Billing Email</span>
+                <span class="cap-desc">Primary: <a href="mailto:info@ps-vn.com">info@ps-vn.com</a> (Henry)</span>
+                <span class="cap-desc">Secondary: <a href="mailto:cso@ps-vn.com">cso@ps-vn.com</a> (CSO Team)</span>
+            </div>
+
+            <div class="footer-col">
+                <span class="cap-title">Direct Support</span>
+                <span class="cap-desc">Mobile / WhatsApp: +84 977 434 823 (Henry)</span>
+                <span class="cap-desc">WhatsApp: +84 334 026 880 (CSO Team)</span>
+            </div>
+
+            <div class="footer-col" style="text-align: right;">
+                <span class="cap-title">Website & Legal</span>
+                <span class="cap-desc">Web: <a href="https://ps-vn.com" target="_blank">ps-vn.com</a></span>
+                <span class="cap-desc">VIET NAM PHOTO EDITING SERVICES JOINT STOCK COMPANY</span>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
