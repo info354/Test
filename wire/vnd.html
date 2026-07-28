@@ -6,7 +6,7 @@
     <title>Payment Guide VND - VIET NAM PHOTO EDITING SERVICES JOINT STOCK COMPANY</title>
     <style>
         /* ==========================================================================
-           1. RESET & BASE STYLES (APPLE / IOS WIDGET PALETTE)
+           1. RESET & BASE STYLES
            ========================================================================== */
         *, *::before, *::after {
             box-sizing: border-box;
@@ -15,44 +15,39 @@
         }
 
         :root {
-            /* Apple Widget Palette */
             --bg-page: #F5F5F7;
             --bg-card: #FFFFFF;
             --text-main: #1D1D1F;
             --text-sub: #86868B;
             --border-card: rgba(0, 0, 0, 0.08);
-            
-            /* Accent Colors */
             --accent-orange: #FF6B00;
             --bg-note: #FFFBEB;
             --border-note: #FDE68A;
             
-            /* Strict Typography Hierarchy */
-            --font-value: 8.5pt;     /* Giá trị dữ liệu chính & Tiêu đề footer */
-            --font-label: 7.2pt;     /* Nhãn phụ, mô tả, Slogan, Footer */
-            --font-mono: 9.5pt;      /* Monospace dãy số (STK, SWIFT) */
-            --font-head-title: 13pt; /* Tiêu đề chính H1 */
-            --font-head-sub: 8.5pt;  /* Header Company Name */
+            --font-value: 8.5pt;
+            --font-label: 7.2pt;
+            --font-mono: 9.5pt;
+            --font-head-title: 13pt;
+            --font-head-sub: 8.5pt;
         }
 
+        /* FIX XOAY TRÊN CHROME VÀ GOOGLE DRIVE */
         @page {
-            /* Đã sửa: Thay "A5 landscape" bằng "210mm 148mm" để không bị xoay trên Google Drive */
-            size: 210mm 148mm; 
+            size: A5 landscape;
             margin: 0;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
+        html, body {
+            width: 210mm;
+            height: 148mm;
             background-color: var(--bg-page);
             color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
             line-height: 1.35;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            padding: 0;
-            margin: 0;
+            overflow: hidden;
         }
 
-        /* Monospace Class */
         .font-mono {
             font-family: "SF Mono", "Roboto Mono", "Courier New", Courier, monospace;
             font-weight: 600;
@@ -60,25 +55,23 @@
         }
 
         /* ==========================================================================
-           2. LAYOUT CONTAINER (FULL-WIDTH & ZERO-SCROLL)
+           2. LAYOUT CONTAINER (KHÓA KHỔ A5 NGANG)
            ========================================================================== */
         .page-container {
-            width: 100%;
-            max-width: 100%;
+            width: 210mm;
+            height: 148mm;
+            padding: 8mm;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            gap: 12px;
+            justify-content: space-between;
         }
 
-        /* Card Component */
         .card {
             background: var(--bg-card);
-            border-radius: 12px;
+            border-radius: 10px;
             border: 1px solid var(--border-card);
-            padding: 16px 20px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            padding: 12px 16px;
         }
 
         /* ==========================================================================
@@ -93,12 +86,12 @@
         .brand-block {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .brand-logo {
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
             object-fit: contain;
         }
 
@@ -131,9 +124,9 @@
 
         .doc-badge {
             display: inline-block;
-            margin-top: 3px;
-            padding: 2px 8px;
-            border-radius: 6px;
+            margin-top: 2px;
+            padding: 2px 6px;
+            border-radius: 4px;
             border: 1px solid var(--accent-orange);
             color: var(--accent-orange);
             font-size: var(--font-label);
@@ -142,7 +135,7 @@
         }
 
         /* ==========================================================================
-           4. MAIN CONTENT - MERGED SINGLE CARD (ZERO DUPLICATION)
+           4. MAIN CONTENT
            ========================================================================== */
         .section-title {
             font-size: var(--font-value);
@@ -150,41 +143,39 @@
             color: var(--text-main);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 14px;
+            margin-bottom: 10px;
             display: inline-block;
             border-bottom: 1.5px solid var(--accent-orange);
             padding-bottom: 2px;
         }
 
-        /* Highlight Box: VND Account Number & SWIFT Code */
         .primary-acc-box {
             background-color: var(--bg-page);
-            border-radius: 10px;
-            padding: 12px 16px;
+            border-radius: 8px;
+            padding: 10px 14px;
             border: 1px solid var(--border-card);
-            margin-bottom: 16px;
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .acc-number {
-            font-size: 14pt;
+            font-size: 13pt;
             color: var(--accent-orange);
             font-weight: 700;
         }
 
-        /* Grid 2 Columns for Banking Details */
         .grid-2col {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px 24px;
+            gap: 8px 20px;
         }
 
         .data-row {
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 1px;
         }
 
         .data-label {
@@ -202,20 +193,20 @@
         }
 
         /* ==========================================================================
-           5. SEPARATE NOTE BOX: REMINDER (BÔI VÀNG NHẠT - KHÔNG HEADER)
+           5. NOTE BOX
            ========================================================================== */
         .note-card {
             background-color: var(--bg-note);
             border: 1px solid var(--border-note);
-            border-radius: 10px;
-            padding: 10px 16px;
+            border-radius: 8px;
+            padding: 8px 14px;
         }
 
         .note-text {
             font-size: var(--font-label);
             font-weight: 500;
             color: #78350F;
-            line-height: 1.35;
+            line-height: 1.3;
             position: relative;
             padding-left: 12px;
         }
@@ -241,13 +232,13 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            padding: 12px 20px;
+            padding: 10px 16px;
         }
 
         .footer-col {
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 1px;
         }
 
         .cap-title {
@@ -269,41 +260,25 @@
         }
 
         /* ==========================================================================
-           7. PRINT OPTIMIZATION (CLEAN PRINT & PRIVACY CLEANUP)
+           7. PRINT OPTIMIZATION
            ========================================================================== */
         @media print {
             html, body {
+                width: 210mm !important;
+                height: 148mm !important;
                 background: var(--bg-page) !important;
-                height: auto !important;
-                padding: 0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
             .page-container {
-                height: auto !important;
-                page-break-inside: avoid;
+                width: 210mm !important;
+                height: 148mm !important;
             }
 
-            .card {
-                box-shadow: none !important;
+            .card, .note-card, .primary-acc-box {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
-            }
-
-            .note-card {
-                background-color: var(--bg-note) !important;
-                border-color: var(--border-note) !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .primary-acc-box {
-                background-color: var(--bg-page) !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            iframe, .privacy, .terms, #privacy-terms {
-                display: none !important;
             }
         }
     </style>
@@ -327,11 +302,10 @@
             </div>
         </header>
 
-        <!-- MAIN CONTENT (1 TÀI KHOẢN VND) -->
+        <!-- MAIN CONTENT -->
         <main class="card">
             <h3 class="section-title">BANK TRANSFER DETAILS</h3>
             
-            <!-- Highlight Box: VND Account Number & SWIFT Code -->
             <div class="primary-acc-box">
                 <div>
                     <div class="data-label">VND ACCOUNT NUMBER</div>
@@ -339,11 +313,10 @@
                 </div>
                 <div style="text-align: right;">
                     <div class="data-label">SWIFT / BIC CODE</div>
-                    <div class="font-mono" style="font-size: 11pt; color: var(--accent-orange); font-weight: 700;">ASCBVNVX</div>
+                    <div class="font-mono" style="font-size: 10.5pt; color: var(--accent-orange); font-weight: 700;">ASCBVNVX</div>
                 </div>
             </div>
 
-            <!-- Banking Details Grid -->
             <div class="grid-2col">
                 <div class="data-row">
                     <span class="data-label">FULL NAME OF ACCOUNT HOLDER</span>
@@ -372,12 +345,12 @@
             </div>
         </main>
 
-        <!-- DIV NOTE VÀNG NHẠT (REMINDER CALLOUT BOX) -->
+        <!-- NOTE -->
         <div class="note-card">
             <p class="note-text">Please include your <strong>Invoice Number</strong> or <strong>Project Name</strong> in the payment reference details.</p>
         </div>
 
-        <!-- FOOTER CARD -->
+        <!-- FOOTER -->
         <footer class="card footer-card">
             <div class="footer-col">
                 <span class="cap-title">Billing Email</span>
