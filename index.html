@@ -40,7 +40,7 @@
       margin-top: 0;
     }
 
-    /* Các nút bấm menu */
+    /* Nút bấm menu */
     .menu-item {
       display: block;
       width: 100%;
@@ -89,8 +89,8 @@
     .btn-open-separate {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 6px 12px;
+      gap: 6px;
+      padding: 6px 14px;
       background-color: #28a745;
       color: #ffffff;
       text-decoration: none;
@@ -141,9 +141,9 @@
   <!-- CONTAINER BÊN PHẢI -->
   <div class="content-container">
     
-    <!-- Thanh công cụ có nút mở trang riêng để in PDF -->
+    <!-- Thanh công cụ chứa nút mở trang lẻ -->
     <div class="top-bar">
-      <span>👁️ Xem trước nội dung</span>
+      <span>👁️ Xem trước thông tin tài khoản</span>
       <a id="directLink" href="wallet/au.html" target="_blank" class="btn-open-separate">
         ↗️ Mở trang lẻ (để In / Tải PDF)
       </a>
@@ -156,7 +156,7 @@
 
   </div>
 
-  <!-- SCRIPT CẬP NHẬT LINK TRANG LẺ KHI BẤM MENU -->
+  <!-- SCRIPT CẬP NHẬT LINK TRANG LẺ -->
   <script>
     function updateDirectLink(url) {
       document.getElementById('directLink').href = url;
