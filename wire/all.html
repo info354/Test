@@ -35,8 +35,8 @@
             --font-head-sub: 8.5pt;  /* Header Company Name */
         }
 
+        /* FLEXIBLE PRINT RULE: Để ngỏ thuộc tính size để người dùng tự do chọn A4/A5/Portrait/Landscape khi bấm Ctrl+P */
         @page {
-            size: A4 landscape;
             margin: 8mm;
             background-color: var(--bg-page);
         }
@@ -149,6 +149,24 @@
             grid-template-columns: 1.1fr 0.9fr 1fr;
             gap: 12px;
             align-items: stretch;
+        }
+
+        /* Điều chỉnh cho màn hình hẹp / Portrait khi xem trên Web hoặc in màn hình nhỏ */
+        @media screen and (max-width: 768px) {
+            .main-horizontal-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .doc-title-block {
+                text-align: left;
+            }
+            .brand-info h2 {
+                white-space: normal;
+            }
         }
 
         .section-title {
@@ -270,7 +288,7 @@
         }
 
         /* ==========================================================================
-           5. SEPARATE NOTE BOX: REMINDER (BÔI VÀNG NHẠT - KHÔNG HEADER)
+           5. SEPARATE NOTE BOX: REMINDER
            ========================================================================== */
         .note-card {
             background-color: var(--bg-note);
@@ -471,12 +489,12 @@
 
         </main>
 
-        <!-- DIV NOTE VÀNG NHẠT (ĐÃ BỎ HEADER REMINDER) -->
+        <!-- DIV NOTE VÀNG NHẠT -->
         <div class="note-card">
             <p class="note-text">Please include your <strong>Invoice Number</strong> or <strong>Project Name</strong> in the payment reference details.</p>
         </div>
 
-        <!-- FOOTER CARD (CẬP NHẬT BILLING EMAIL CHUẨN ĐÚNG YÊU CẦU MỚI NẤT) -->
+        <!-- FOOTER CARD -->
         <footer class="card footer-card">
             <div class="footer-col">
                 <span class="cap-title">Billing Email</span>
