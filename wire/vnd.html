@@ -35,11 +35,10 @@
             --font-head-sub: 8.5pt;  /* Header Company Name */
         }
 
-        @page {
-            size: A4 portrait;
-            margin: 8mm;
-            background-color: var(--bg-page);
-        }
+       @page {
+  size: A5 auto; /* Cho phép trình duyệt tự do chọn hướng Portrait hoặc Landscape */
+  margin: 0;
+}
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
