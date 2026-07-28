@@ -35,8 +35,8 @@
             --font-head-sub: 8.5pt;  /* Header Company Name */
         }
 
+        /* FLEXIBLE PRINT RULE: Cho phép người dùng tùy chọn khổ giấy & hướng in khi bấm Ctrl+P */
         @page {
-            size: A4 portrait;
             margin: 8mm;
             background-color: var(--bg-page);
         }
@@ -201,8 +201,34 @@
             word-break: break-word;
         }
 
+        /* Responsive Layout khi xem màn hình hẹp */
+        @media screen and (max-width: 600px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+            }
+            .header-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .doc-title-block {
+                text-align: left;
+            }
+            .brand-info h2 {
+                white-space: normal;
+            }
+            .primary-acc-box {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .primary-acc-box div:last-child {
+                text-align: left !important;
+            }
+        }
+
         /* ==========================================================================
-           5. SEPARATE NOTE BOX: REMINDER (BÔI VÀNG NHẠT - KHÔNG HEADER)
+           5. SEPARATE NOTE BOX: REMINDER
            ========================================================================== */
         .note-card {
             background-color: var(--bg-note);
